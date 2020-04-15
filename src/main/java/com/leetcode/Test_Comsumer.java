@@ -14,27 +14,7 @@ private  String s="5";
     }
     public static void main(String[] args) {
 
-        //generateX(s ->System.out.println(s));
-        //System.out.println("1".compareTo("2"));
-        //System.out.println("3".compareTo("2"));
-        //System.out.println("2".compareTo("2"));
-        //BiFunction<Integer,Integer,Integer> biFunction=(a,b)-> a+b;
-        //System.out.println(biFunction.apply(1,2));
-       // Consumer<Integer> consumer= x->{
-       //     if (x>10){
-       //         System.out.println(x+"大于10");
-       //     }else {
-       //         System.out.println(x);
-       //     }
-       // };
-       //
-       //// consumer.accept(20);
-       //consumer.andThen(x->{
-       //     if (x<=10){
-       //         System.out.println(x+"不大于10");
-       //     }else {
-       //         System.out.println(x);
-       //     }
+
 
         Function<Integer, Integer> incr1 = x -> x + 1;
         Function<Integer, Integer> multiply = x -> x * 2;
