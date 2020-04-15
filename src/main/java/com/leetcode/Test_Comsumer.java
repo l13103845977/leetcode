@@ -1,0 +1,68 @@
+package com.leetcode;
+
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+
+// functional/Strategize.java
+public class Test_Comsumer {
+private  String s="5";
+
+    public  void generateX(Consumer<String> consumer) {
+        consumer.accept("hello consumer");
+    }
+    public static void main(String[] args) {
+
+        //generateX(s ->System.out.println(s));
+        //System.out.println("1".compareTo("2"));
+        //System.out.println("3".compareTo("2"));
+        //System.out.println("2".compareTo("2"));
+        //BiFunction<Integer,Integer,Integer> biFunction=(a,b)-> a+b;
+        //System.out.println(biFunction.apply(1,2));
+       // Consumer<Integer> consumer= x->{
+       //     if (x>10){
+       //         System.out.println(x+"大于10");
+       //     }else {
+       //         System.out.println(x);
+       //     }
+       // };
+       //
+       //// consumer.accept(20);
+       //consumer.andThen(x->{
+       //     if (x<=10){
+       //         System.out.println(x+"不大于10");
+       //     }else {
+       //         System.out.println(x);
+       //     }
+
+        Function<Integer, Integer> incr1 = x -> x + 1;
+        Function<Integer, Integer> multiply = x -> x * 2;
+        int x = 2;
+        System.out.println("f(x)=x+1,when x=" + x + ", f(x)=" + incr1.apply(x));
+        System.out.println("f(x)=x+1,g(x)=2x, when x=" + x + ", f(g(x))=" + incr1.compose(multiply).apply(x));
+        System.out.println("f(x)=x+1,g(x)=2x, when x=" + x + ", g(f(x))=" + incr1.andThen(multiply).apply(x));
+
+        Integer a=3;
+        System.out.println(a.toString());
+        People people = new People.Builder().setAge(1).setHeight(2).setName("张三").build();
+        System.out.println(people.toString());
+    }
+
+
+
+
+
+       class ListNode {
+         int val;
+         ListNode next;
+         ListNode(int x) { val = x; }
+     }
+
+    class Solution {
+        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+return null;
+        }
+    }
+}
