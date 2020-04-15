@@ -1,8 +1,11 @@
 package com.leetcode;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 // functional/Strategize.java
@@ -27,6 +30,15 @@ private  String s="5";
         System.out.println(a.toString());
         People people = new People.Builder().setAge(1).setHeight(2).setName("张三").build();
         System.out.println(people.toString());
+
+        List list=new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+       List newlist= (List) list.stream().filter(s->Integer.valueOf(s.toString())>2).collect(Collectors.toList());
+        System.out.println(newlist.size());
     }
 
 
