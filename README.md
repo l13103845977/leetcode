@@ -14,3 +14,7 @@ docker常用命令
                      docker重新读取配置文件 systemctl daemon-reload
       docker 启动失败 参考https://blog.csdn.net/zhangbeizhen18/article/details/85239758
        idea使用docekr main下创建一个docker文件夹，创建Dockerfile文件，
+       
+       
+       docker run  -p 192.168.6.128:9999:9999 -d leetcode
+       -d 后台运行 -p 宿主机ip:端口(开放):端口(启动)

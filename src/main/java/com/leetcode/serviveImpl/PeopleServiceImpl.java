@@ -1,8 +1,8 @@
 package com.leetcode.serviveImpl;
 
 import com.leetcode.domain.People;
+import com.leetcode.mapper.PeopleMapper;
 import com.leetcode.service.PeopleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,16 +11,21 @@ import javax.annotation.Resource;
 public class PeopleServiceImpl implements PeopleService {
 
     @Resource
-    private PeopleService peopleService;
+    private PeopleMapper PeopleMapper;
 
 
     @Override
     public int insert(People record) {
-        return peopleService.insert(record);
+        return PeopleMapper.insert(record);
     }
 
     @Override
     public int insertSelective(People record) {
-        return peopleService.insertSelective(record);
+        return PeopleMapper.insertSelective(record);
+    }
+
+    @Override
+    public People selectPeopleByName(String name) {
+        return PeopleMapper.selectPeopleByName(name);
     }
 }

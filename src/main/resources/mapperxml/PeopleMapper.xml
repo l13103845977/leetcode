@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="com.leetcode.domain.People">
     <!--@mbg.generated-->
     <!--@Table people-->
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="name"  property="name" />
+    <result column="age"  property="age" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
@@ -14,7 +14,7 @@
   <insert id="insert" parameterType="com.leetcode.domain.People">
     <!--@mbg.generated-->
     insert into people (`name`, age)
-    values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+    values (#{name}, #{age})
   </insert>
   <insert id="insertSelective" parameterType="com.leetcode.domain.People">
     <!--@mbg.generated-->
@@ -29,11 +29,17 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+        #{name},
       </if>
       <if test="age != null">
-        #{age,jdbcType=INTEGER},
+        #{age},
       </if>
     </trim>
   </insert>
+
+  <select id="selectPeopleByName" parameterType="string" resultType="com.leetcode.domain.People">
+    <!--@mbg.generated-->
+    select  * from people where name = #{name,jdbcType=VARCHAR}
+
+  </select>
 </mapper>

@@ -6,14 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-public interface PeopleService extends PeopleMapper {
+public interface PeopleService  {
 
 
 
-    @Override
+
     public int insert(People record);
 
-    @Override
+
     public int insertSelective(People record);
 
+    public People selectPeopleByName(String name);
 }
