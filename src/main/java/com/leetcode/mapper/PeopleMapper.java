@@ -12,6 +12,7 @@ public interface PeopleMapper {
 
     int insertSelective(People record);
 
-    //@Select("SELECT * FROM `people` where people.`name` = #{name} ")
+    @Select("SELECT * FROM `people` where people.`name` = #{name} ")
     People selectPeopleByName(String name);
+
 }

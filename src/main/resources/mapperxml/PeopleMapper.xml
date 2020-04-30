@@ -37,9 +37,9 @@
     </trim>
   </insert>
 
-  <select id="selectPeopleByName" parameterType="string" resultType="com.leetcode.domain.People">
-    <!--@mbg.generated-->
-    select  * from people where name = #{name,jdbcType=VARCHAR}
+<!--  <select id="selectPeopleByName" parameterType="string" resultType="com.leetcode.domain.People">-->
+<!--    &lt;!&ndash;@mbg.generated&ndash;&gt;-->
+<!--    select  * from people where name = #{name,jdbcType=VARCHAR}-->
 
-  </select>
+<!--  </select>-->
 </mapper>

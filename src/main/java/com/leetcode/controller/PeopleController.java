@@ -1,19 +1,22 @@
 package com.leetcode.controller;
 
 import com.leetcode.domain.People;
-import com.leetcode.mapper.PeopleMapper;
 import com.leetcode.service.PeopleService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+
+import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+@Api("leetcodeAPI接口")
 @RestController
 @RequestMapping("/people")
 public class PeopleController {
 
+    private   final Logger log= LoggerFactory.getLogger(People.class);
 
     @Resource
     PeopleService peopleService;
@@ -22,21 +25,23 @@ public class PeopleController {
     /**
      * 新增
      */
-    @RequestMapping("/insert")
-    public  String  insert(){
+    @ApiOperation(value = "新增用户",notes = "使用介绍",produces = "application/json")
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    public  void   insert(@RequestBody People people){
+        log.info("新增用户:"+people);
+        peopleService.insert(people);
 
-        peopleService.insert(People.builder().name("张三").age(10).build());
 
-        return "docker连接成功";
     }
 
     /**
-     * 新增
+     * 根据姓名查询
      */
-    @RequestMapping("/selectPeopleByName")
-    public  People  selectPeopleByName(){
+    @ApiOperation(value = "根据姓名查询接口",produces = "application/json")
+    @RequestMapping(value = "/selectPeopleByName",method = RequestMethod.GET)
+    public  People  selectPeopleByName( @RequestParam(required = false) String name){
 
-       People people= peopleService.selectPeopleByName("张三");
+       People people= peopleService.selectPeopleByName(name);
         System.out.println(people);
         return people;
     }
