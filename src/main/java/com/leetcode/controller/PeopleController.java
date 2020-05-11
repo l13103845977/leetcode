@@ -42,7 +42,7 @@ public class PeopleController {
     public  People  selectPeopleByName( @RequestParam(required = false) String name){
 
        People people= peopleService.selectPeopleByName(name);
-        System.out.println(people);
+
         return people;
     }
 }

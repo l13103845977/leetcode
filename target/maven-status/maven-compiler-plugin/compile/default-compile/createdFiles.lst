@@ -1,8 +1,0 @@
-com\leetcode\domain\People$PeopleBuilder.class
-com\leetcode\Application.class
-com\leetcode\domain\People.class
-com\leetcode\mapper\PeopleMapper.class
-com\leetcode\config\SwaggerUiConfig.class
-com\leetcode\serviveImpl\PeopleServiceImpl.class
-com\leetcode\service\PeopleService.class
-com\leetcode\controller\PeopleController.class
